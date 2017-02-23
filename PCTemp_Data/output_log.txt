@@ -1,0 +1,87 @@
+Mono path[0] = 'C:/Users/Brendan1/Downloads/Unity Projects/Computing Coursework/PCTemp_Data/Managed'
+Mono path[1] = 'C:/Users/Brendan1/Downloads/Unity Projects/Computing Coursework/PCTemp_Data/Mono'
+Mono config path = 'C:/Users/Brendan1/Downloads/Unity Projects/Computing Coursework/PCTemp_Data/Mono/etc'
+PlayerConnection initialized from C:/Users/Brendan1/Downloads/Unity Projects/Computing Coursework/PCTemp_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55307
+Multi-casting "[IP] 192.168.1.8 [Port] 55307 [Flags] 3 [Guid] 420571517 [EditorId] 3831788745 [Version] 1048832 [Id] WindowsPlayer(The_Captains_PC) [Debug] 1" to [225.0.0.222:54997]...
+Waiting for connection from host on [192.168.1.8:55307]...
+PlayerConnection accepted from [192.168.1.8] handle:0x2f8
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,defer=y,address=0.0.0.0:56517
+PlayerConnection already initialized - listening to [192.168.1.8:55307]
+Initialize engine version: 5.4.2f2 (b7e030c65c9b)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon HD 7700 Series (ID=0x683f)
+    Vendor:   ATI
+    VRAM:     1005 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Brendan1\Downloads\Unity Projects\Computing Coursework\PCTemp_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Brendan1\Downloads\Unity Projects\Computing Coursework\PCTemp_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Brendan1\Downloads\Unity Projects\Computing Coursework\PCTemp_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Brendan1\Downloads\Unity Projects\Computing Coursework\PCTemp_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Brendan1\Downloads\Unity Projects\Computing Coursework\PCTemp_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Brendan1\Downloads\Unity Projects\Computing Coursework\PCTemp_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Brendan1\Downloads\Unity Projects\Computing Coursework\PCTemp_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Brendan1\Downloads\Unity Projects\Computing Coursework\PCTemp_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Brendan1\Downloads\Unity Projects\Computing Coursework\PCTemp_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Brendan1\Downloads\Unity Projects\Computing Coursework\PCTemp_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.120 seconds
+Platform assembly: C:\Users\Brendan1\Downloads\Unity Projects\Computing Coursework\PCTemp_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Brendan1\Downloads\Unity Projects\Computing Coursework\PCTemp_Data\Managed\System.dll (this message is harmless)
+desktop: 1776x1000 59Hz; virtual: 1776x1000 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+get_names is not allowed to be called from a MonoBehaviour constructor (or instance field initializer), call it in Awake or Start instead. Called from MonoBehaviour 'graphicsSettingsBehaviour'.
+See "Script Serialization" page in the Unity Manual for further details.
+UnityEngine.QualitySettings:get_names()
+graphicsSettingsBehaviour:.cctor()
+
+[C:/buildslave/unity/build/Runtime/Scripting/ScriptingThreadAndSerializationSafeCheck.cpp line 94] 
+(Filename: C:/buildslave/unity/build/Runtime/Scripting/ScriptingThreadAndSerializationSafeCheck.cpp Line: 94)
+
+UnityException: get_names is not allowed to be called from a MonoBehaviour constructor (or instance field initializer), call it in Awake or Start instead. Called from MonoBehaviour 'graphicsSettingsBehaviour'.
+See "Script Serialization" page in the Unity Manual for further details.
+  at (wrapper managed-to-native) UnityEngine.QualitySettings:get_names ()
+  at graphicsSettingsBehaviour..cctor () [0x00000] in <filename unknown>:0 
+Rethrow as TypeInitializationException: An exception was thrown by the type initializer for graphicsSettingsBehaviour
+
+ 
+(Filename:  Line: -1)
+
+UnloadTime: 1.622914 ms
+NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.GUILayoutUtility.BeginLayoutGroup (UnityEngine.GUIStyle style, UnityEngine.GUILayoutOption[] options, System.Type layoutType) [0x00000] in C:\buildslave\unity\build\Runtime\IMGUI\Managed\GUILayoutUtility.cs:261 
+  at UnityEngine.GUILayout.BeginHorizontal (UnityEngine.GUIContent content, UnityEngine.GUIStyle style, UnityEngine.GUILayoutOption[] options) [0x00000] in C:\buildslave\unity\build\Runtime\IMGUI\Managed\GUILayout.cs:282 
+  at UnityEngine.GUILayout.BeginHorizontal (UnityEngine.GUILayoutOption[] options) [0x00000] in C:\buildslave\unity\build\Runtime\IMGUI\Managed\GUILayout.cs:270 
+  at musicSelector.OnGui () [0x00000] in C:\Users\Brendan1\Downloads\Unity Projects\Computing Coursework\Assets\TopDown Scripts\musicSelector.cs:34 
+  at musicSelector.Start () [0x0005c] in C:\Users\Brendan1\Downloads\Unity Projects\Computing Coursework\Assets\TopDown Scripts\musicSelector.cs:28 
+ 
+(Filename: C:/buildslave/unity/build/Runtime/IMGUI/Managed/GUILayoutUtility.cs Line: 261)
+
+UnityException: get_names is not allowed to be called from a MonoBehaviour constructor (or instance field initializer), call it in Awake or Start instead. Called from MonoBehaviour 'graphicsSettingsBehaviour'.
+See "Script Serialization" page in the Unity Manual for further details.
+  at (wrapper managed-to-native) UnityEngine.QualitySettings:get_names ()
+  at graphicsSettingsBehaviour..cctor () [0x00000] in <filename unknown>:0 
+Rethrow as TypeInitializationException: An exception was thrown by the type initializer for graphicsSettingsBehaviour
+
+ 
+(Filename:  Line: -1)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 24f8 -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.391339 ms
+System memory in use before: 18.2 MB.
+System memory in use after: 18.2 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 314.
+Total: 0.363155 ms (FindLiveObjects: 0.038213 ms CreateObjectMapping: 0.016157 ms MarkObjects: 0.240308 ms  DeleteObjects: 0.059756 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at randomSpawn.Start () [0x0002a] in C:\Users\Brendan1\Downloads\Unity Projects\Computing Coursework\Assets\TopDown Scripts\randomSpawn.cs:33 
+ 
+(Filename: C:/Users/Brendan1/Downloads/Unity Projects/Computing Coursework/Assets/TopDown Scripts/randomSpawn.cs Line: 33)
+
+Waiting for finish
