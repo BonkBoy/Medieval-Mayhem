@@ -14,8 +14,8 @@ public class MusicSearch : MonoBehaviour
 
     void Start()
     {
-
-        DirectoryInfo musicFolder = new DirectoryInfo("/storage/emulated/0/music/");
+        DontDestroyOnLoad(gameObject);
+        DirectoryInfo musicFolder = new DirectoryInfo("/storage/emulated/0/Music/");
         musicFiles = musicFolder.GetFiles("*.mp3", SearchOption.AllDirectories);
 
         loadMusic();

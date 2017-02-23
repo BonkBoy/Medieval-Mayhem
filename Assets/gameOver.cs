@@ -34,10 +34,8 @@ public class gameOver : MonoBehaviour {
         {
             PlayerPrefs.DeleteKey("levelCounter");
             PlayerPrefs.DeleteKey("playerScore");
-            PlayerPrefs.DeleteKey("scoreMultiplier");
             PlayerPrefs.SetInt("levelCounter", 1);
             PlayerPrefs.SetInt("playerScore", 0);
-            PlayerPrefs.SetInt("scoreMultiplier", 0);
             PlayerPrefs.Save();
             SceneManager.LoadScene("adas");
         }
@@ -50,7 +48,7 @@ public class gameOver : MonoBehaviour {
         {
             PlayerPrefs.DeleteKey("levelCounter");
             PlayerPrefs.DeleteKey("playerScore");
-            PlayerPrefs.SetInt("levelCounter", 0);
+            PlayerPrefs.SetInt("levelCounter", 1);
             PlayerPrefs.SetInt("playerScore", 0);
             PlayerPrefs.Save();
             SceneManager.LoadScene("loadScreen");

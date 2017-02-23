@@ -19,13 +19,16 @@ public class enemyShootingBehaviour : MonoBehaviour
     void Start()
     {
         InvokeRepeating("enemyShoot", 0f, 0.7f);
-        scoreMultiplier = PlayerPrefs.GetInt("scoreMultiplier");
+
         score.text = playerScore.ToString();
     }
 
     void Update()
     {
-       
+        int finalScore = 100 * scoreMultiplier;
+
+        PlayerPrefs.SetInt("playerScore", scoreMultiplier);
+
     }
 
     void enemyShoot()
@@ -51,16 +54,13 @@ public class enemyShootingBehaviour : MonoBehaviour
             Destroy(coll.gameObject);
             Destroy(gameObject);
 
+            scoreMultiplier = PlayerPrefs.GetInt("playerScore");
+
             scoreMultiplier = scoreMultiplier + 1;
 
-            playerScore = 100 * scoreMultiplier;
+            PlayerPrefs.SetInt("playerScore", scoreMultiplier);
 
-            PlayerPrefs.SetInt("playerScore", playerScore);
-
-            PlayerPrefs.SetInt("scoreMultiplier", scoreMultiplier);
-
-            Start();
-            
+            score.text = playerScore.ToString();
         }
 
     }
