@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.IO;
+using System.Linq;
 
 public class gameOver : MonoBehaviour {
 
@@ -11,7 +12,8 @@ public class gameOver : MonoBehaviour {
     public GameObject gameMenu;
     public InputField playerInput;
     string playerName;
-    
+    int finalScore;
+    List<int> currencyValues = new List<int>();
 
     void Start()
     {
@@ -24,8 +26,27 @@ public class gameOver : MonoBehaviour {
 
         PlayerPrefsX.SetIntArray("scores", scores.ToArray());
 
-        PlayerPrefs.Save();
+        finalScore = PlayerPrefs.GetInt("finalScore");
 
+        currencyValues = PlayerPrefsX.GetIntArray("currencyValues").OfType<int>().ToList();
+
+        int currencyCalc = finalScore / 10;
+
+        currencyValues.Add(currencyCalc);
+
+        for (int i = 0; i <= currencyValues.Count; i++)
+        {
+
+            int currencyAmount = currencyValues[i] + currencyValues[i+1];
+
+            PlayerPrefs.SetInt("playerCurrency", currencyAmount);
+
+        }
+
+        PlayerPrefsX.SetIntArray("currencyValues", currencyValues.ToArray());
+
+
+        PlayerPrefs.Save();
     }
 
     public void restartGame(bool clicked)

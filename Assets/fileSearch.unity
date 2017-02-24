@@ -805,8 +805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e02a9f66872cd4dba94af9830d11cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicPlayer: {fileID: 0}
-  FUCKINGCHECK: {fileID: 0}
+  musicPlayer: {fileID: 925141764}
+  FUCKINGCHECK: {fileID: 1382070493}
 --- !u!4 &1793370557
 Transform:
   m_ObjectHideFlags: 0
