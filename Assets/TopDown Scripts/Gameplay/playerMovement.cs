@@ -12,13 +12,21 @@ public class playerMovement : MonoBehaviour
     public GameObject moveStick;
     public GameObject pauseButton;
     public GameObject playerFireButton;
+    int speedMultiplier;
+    int superSpeedMultiplier;
+
+    private void Start()
+    {
+        speedMultiplier = PlayerPrefs.GetInt("speedMultiplier");
+    }
 
     void Update()
     {
+        superSpeedMultiplier = PlayerPrefs.GetInt("superSpeedMultiplier");
         Vector2 playerPosition = transform.position;
 
-        var xMove = CnInputManager.GetAxis("Horizontal") + transform.forward.magnitude * Time.deltaTime;
-        var yMove = CnInputManager.GetAxis("Vertical") + transform.up.magnitude * Time.deltaTime;
+        var xMove = CnInputManager.GetAxis("Horizontal") + transform.forward.magnitude * speedMultiplier * superSpeedMultiplier;
+        var yMove = CnInputManager.GetAxis("Vertical") + transform.up.magnitude * speedMultiplier * superSpeedMultiplier;
 
         if(CnInputManager.GetAxis("Horizontal") != transform.position.x) {
 

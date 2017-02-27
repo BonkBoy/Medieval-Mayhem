@@ -27,6 +27,7 @@ public class enemyShootingBehaviour : MonoBehaviour
     {
         scoreMultiplier = PlayerPrefs.GetInt("playerScore");
         finalScore = 100 * scoreMultiplier;
+        score.text = finalScore.ToString();
         PlayerPrefs.SetInt("finalScore", finalScore);
     }
 
@@ -59,7 +60,7 @@ public class enemyShootingBehaviour : MonoBehaviour
 
             PlayerPrefs.SetInt("playerScore", scoreMultiplier);
 
-            score.text = finalScore.ToString();
+            
         }
 
     }

@@ -4,25 +4,30 @@ using UnityEngine.UI;
 
 public class bulletPrefabBehaviour : MonoBehaviour {
 
-    float speed;
-    GameObject gameOverMenu;
-    GameObject mainGame;
-    
+    float bulletSpeed;
 
 	// Use this for initialization
 	void Start () {
-
+        bulletSpeed = PlayerPrefs.GetFloat("bulletSpeedMultiplier");
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (gameObject.tag == "playerBullet")
+        {
+            Vector2 bulletPosition = transform.position;
 
-        Vector2 bulletPosition = transform.position;
+            bulletPosition = transform.position + transform.up * bulletSpeed;
 
-        bulletPosition = transform.position + transform.up * 1f;
+            transform.position = bulletPosition;
+        }else
+        {
+            Vector2 bulletPosition = transform.position;
 
-        transform.position = bulletPosition;
+            bulletPosition = transform.position + transform.up * 1f;
 
+            transform.position = bulletPosition;
+        }
         float maxX;
         float maxY;
 

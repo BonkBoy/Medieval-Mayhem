@@ -8,17 +8,15 @@ using System.Linq;
 
 public class gameOver : MonoBehaviour {
 
-    public GameObject mainGame;
-    public GameObject gameMenu;
     public InputField playerInput;
     string playerName;
     int finalScore;
-    List<int> currencyValues = new List<int>();
+    int currencyValue;
 
     void Start()
     {
 
-        int score = PlayerPrefs.GetInt("playerScore");
+        int score = PlayerPrefs.GetInt("finalScore");
 
         List<int> scores = new List<int>(PlayerPrefsX.GetIntArray("scores"));
 
@@ -28,23 +26,13 @@ public class gameOver : MonoBehaviour {
 
         finalScore = PlayerPrefs.GetInt("finalScore");
 
-        currencyValues = PlayerPrefsX.GetIntArray("currencyValues").OfType<int>().ToList();
+        currencyValue = PlayerPrefs.GetInt("currencyValue");
 
         int currencyCalc = finalScore / 10;
 
-        currencyValues.Add(currencyCalc);
+        currencyValue = currencyValue + currencyCalc;
 
-        for (int i = 0; i <= currencyValues.Count; i++)
-        {
-
-            int currencyAmount = currencyValues[i] + currencyValues[i+1];
-
-            PlayerPrefs.SetInt("playerCurrency", currencyAmount);
-
-        }
-
-        PlayerPrefsX.SetIntArray("currencyValues", currencyValues.ToArray());
-
+        PlayerPrefs.SetInt("playerCurrency", currencyValue);
 
         PlayerPrefs.Save();
     }
