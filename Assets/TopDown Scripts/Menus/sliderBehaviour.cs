@@ -7,19 +7,26 @@ using UnityStandardAssets.Effects;
 public class sliderBehaviour : MonoBehaviour {
 
     public Slider brightnessSlider;
-    public Color rbgvalue;
+    public Image brightness;
+
+    public void Start()
+    {
+        
+    }
 
     public void brightnessControl()
     {
-        rbgvalue.r = brightnessSlider.value;
-        rbgvalue.g = brightnessSlider.value;
-        rbgvalue.b = brightnessSlider.value;
-       
+        Color newColour = brightness.color;
+        newColour.a = brightnessSlider.value - 0.1f;
+        newColour.b = 0;
+        newColour.g = 0;
+        newColour.r = 0;
+        brightness.color = newColour;
     }    
      
     public void Update()
     {
-        RenderSettings.ambientLight = new Color(rbgvalue.r, rbgvalue.b, rbgvalue.g, 1);
+        
     }
 
 

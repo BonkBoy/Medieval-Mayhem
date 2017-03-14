@@ -16,7 +16,7 @@ public class MusicSearch : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         DirectoryInfo musicFolder = new DirectoryInfo("/storage/emulated/0/Music/");
-        musicFiles = musicFolder.GetFiles("*.mp3", SearchOption.AllDirectories);
+        musicFiles = musicFolder.GetFiles("*.wav", SearchOption.AllDirectories);
 
         loadMusic();
     }
@@ -27,13 +27,9 @@ public class MusicSearch : MonoBehaviour
         {
             filePath = new WWW("File://" + musicFiles[i]);
             filePaths.Add(filePath.ToString());
+            PlayerPrefsX.SetStringArray("filePaths", filePaths.ToArray());
+            PlayerPrefs.Save();
         }
-    }
-
-    public void Update()
-    {
-        PlayerPrefsX.SetStringArray("filePaths", filePaths.ToArray());
-        PlayerPrefs.Save();
     }
 
 }

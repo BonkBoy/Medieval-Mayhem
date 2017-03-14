@@ -8,14 +8,14 @@ public class graphicsSettingsBehaviour : MonoBehaviour {
 
 
     static string[] names;
-    List<string> nameslist;
+    List<string> nameslist = new List<string>();
     public Dropdown graphicsOptions;
     public Text selectedGraphics;
 
     void Start()
     {
         names = QualitySettings.names;
-        List<string> nameslist = names.OfType<string>().ToList();
+        nameslist = names.OfType<string>().ToList();
         populateList();
         graphicsControl();
     }
@@ -25,9 +25,10 @@ public class graphicsSettingsBehaviour : MonoBehaviour {
         int index = graphicsOptions.value;
 
         selectedGraphics.text = nameslist[index];
-        if (index == 0){
-            QualitySettings.SetQualityLevel(index, true);
+        if (index == 0)
+        {
 
+            QualitySettings.SetQualityLevel(index, true);
 
         }
         if (index == 1)
